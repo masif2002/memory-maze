@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import shuffle from './utils/shuffle';
 import Card from './components/Card'
 import Header from './components/Header'
+import useAppBadge from './hooks/useAppBadge';
 
 function App() {
   const [cards, setCards] = useState(shuffle)
@@ -9,6 +10,7 @@ function App() {
   const [pickTwo, setPickTwo] = useState(null)
   const [disabled, setDisabled] = useState(false)
   const [wins, setWins] = useState(0)
+  const [setBadge, clearBadge] = useAppBadge()  // For PWA
 
   useEffect(() => {
 
@@ -22,6 +24,7 @@ function App() {
 
         if (gameWon()) {
           setWins(wins+1)
+          setBadge() // For PWA
           resetGame()
         }
 
@@ -55,14 +58,14 @@ function App() {
   }
 
   const resetGame = () => {
-    setCards(shuffle)
     setPickOne(null)
     setPickTwo(null)
+    setCards(shuffle)
+    clearBadge()
   }
 
   const gameWon = () => {
     const cardsLeft = cards.filter((card) => !card.selected)
-    console.log('hello');
     return cardsLeft.length < 1
   }
   
