@@ -1,4 +1,4 @@
-const Card = ({ image, selected, onClick }) => {
+const Card = ({ image, selected, onClickk }) => {
 
 
   return (
@@ -10,7 +10,7 @@ const Card = ({ image, selected, onClick }) => {
           alt=""
           className="card-back"
           src={'/assets/logo.png'}
-          onClick={onClick}
+          onClick={onClickk}
         />
       </div>
     </div>

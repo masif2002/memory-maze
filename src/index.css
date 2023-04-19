@@ -1,12 +1,12 @@
 :root {
-  --text: #f66936;
+  --text: #84448c;
   --card: #202426;
   --orange: #ffa200;
-  --bg: linear-gradient(135deg, #381762, #84448c);
+  --bg: linear-gradient(135deg,  #84448c, #381762);
 
   --delay: 200ms;
-  --rotate-0: rotateY(0deg);
-  --rotate-90: rotateY(90deg);
+  --rotate-0: rotateY(0deg);  /* not visible */
+  --rotate-90: rotateY(90deg); /* visible */
   --transition: all ease-in 200ms;
 
   --radius: 0.75rem;
@@ -23,8 +23,6 @@
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
   padding: 1rem;
   display: flex;
   overflow: auto; 
@@ -39,6 +37,17 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: transparent;
+  color: #ffffff;
+  text-shadow: 0px 0px 10px var(--text);
+  box-shadow: 0px 0px 5px var(--text);
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 
@@ -65,6 +74,7 @@ body {
   width: var(--card-width);
   animation: var(--card-enter);
   border-radius: var(--radius);
+  cursor: pointer;
 }
 
 
@@ -94,6 +104,35 @@ body {
 .selected .card-back {
   transform: var(--rotate-90);
   transition-delay: 0s;
+}
+
+.header {
+  background-color: var(--card);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+  box-shadow: var(--shadow);
+
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  margin-top: 10px;
+  color: white;
+  text-shadow: 0px 0px 10px var(--text)
+}
+
+.wins {
+  color: white;
+  text-shadow: 0px 0px 10px var(--text)
 }
 
 @keyframes enter {

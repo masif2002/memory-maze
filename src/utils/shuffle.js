@@ -21,7 +21,7 @@ const shuffle = () => {
   ]
 
   const shuffledDeck = 
-  [...cards, ...cards].sort(() => 0.5 - Math.random()).map((card) => ({...card, id: Math.random()}) )
+  [...cards, ...cards].sort(() => 0.5 - Math.random()).map((card) => ({...card, id: Math.random(), selected: false}) )
 
   return shuffledDeck
 
