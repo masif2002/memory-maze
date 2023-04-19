@@ -146,3 +146,11 @@ button {
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 720px) {
+
+  .card {
+    width: var(--card-width-mobile);
+  }
+  
+}
